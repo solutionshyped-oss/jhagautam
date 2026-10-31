@@ -109,7 +109,7 @@
     .join-button {
       background: var(--purple);
       color: white;
-      margin-bottom: 22px;
+      margin-bottom: 28px;
       box-shadow: 0 8px 22px rgba(0, 0, 0, .18);
     }
 
@@ -123,51 +123,6 @@
     .join-button:hover,
     .bottom-button:hover {
       transform: translateY(-2px);
-    }
-
-    .timer-box {
-      margin: 0 0 30px;
-      padding: 20px 16px;
-      background: rgba(255, 255, 255, .75);
-      border: 2px solid rgba(0, 0, 0, .08);
-      border-radius: 24px;
-    }
-
-    .timer-title {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .timer-number {
-      display: inline-grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      margin: 5px 0;
-      border-radius: 50%;
-      background: var(--purple);
-      color: #fff;
-      font-size: 28px;
-      font-weight: 900;
-    }
-
-    .timer-message {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .open-now {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 11px 20px;
-      border-radius: 999px;
-      background: var(--dark);
-      color: white;
-      text-decoration: none;
-      font-weight: 800;
     }
 
     .features {
@@ -272,8 +227,7 @@
 
   <main class="page">
 
-    <!-- Profile Photo: Keep profile.jpg beside index.html -->
-
+    <!-- Profile Photo -->
     <img
       class="brand-mark"
       src="./profile.jpg"
@@ -285,7 +239,6 @@
     <h1>Learn With Gautam Jha</h1>
 
     <!-- Main Telegram Button -->
-
     <a
       class="join-button"
       href="https://t.me/+nTVW4sAhXt45ZjBl"
@@ -295,33 +248,7 @@
       📲 Join Telegram Channel
     </a>
 
-    <!-- Five-Second Automatic Redirect Timer -->
-
-    <section class="timer-box" aria-live="polite">
-
-      <p class="timer-title" id="timer-title">
-        Joining Telegram shortly...
-      </p>
-
-      <div class="timer-number" id="timer-number">5</div>
-
-      <p class="timer-message" id="timer-message">
-        Opening the Telegram channel in 5 seconds.
-      </p>
-
-      <a
-        class="open-now"
-        href="https://t.me/+nTVW4sAhXt45ZjBl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join Now
-      </a>
-
-    </section>
-
     <!-- Channel Information -->
-
     <section class="features" aria-label="Channel topics">
 
       <article class="feature">
@@ -359,7 +286,6 @@
     </section>
 
     <!-- Bottom Telegram Button -->
-
     <a
       class="bottom-button"
       href="https://t.me/+nTVW4sAhXt45ZjBl"
@@ -373,8 +299,7 @@
       Learn. Practice. Stay Informed.
     </p>
 
-    <!-- Trading Disclaimer -->
-
+    <!-- Disclaimer -->
     <p class="disclaimer">
       Educational content only. This page does not guarantee profits
       or trading results. Trading and investing involve risk, including
@@ -387,47 +312,6 @@
     </footer>
 
   </main>
-
-  <!-- Automatic Telegram Redirect Script -->
-
-  <script>
-    const telegramLink = "https://t.me/+nTVW4sAhXt45ZjBl";
-
-    let secondsLeft = 5;
-
-    const timerNumber = document.getElementById("timer-number");
-    const timerTitle = document.getElementById("timer-title");
-    const timerMessage = document.getElementById("timer-message");
-
-    const countdown = setInterval(function () {
-
-      secondsLeft--;
-
-      if (secondsLeft > 0) {
-
-        timerNumber.textContent = secondsLeft;
-
-        timerMessage.textContent =
-          "Opening the Telegram channel in " +
-          secondsLeft +
-          (secondsLeft === 1 ? " second." : " seconds.");
-
-      } else {
-
-        clearInterval(countdown);
-
-        timerNumber.textContent = "→";
-        timerTitle.textContent = "Opening Telegram...";
-
-        timerMessage.textContent =
-          "If Telegram does not open automatically, use any Join button.";
-
-        window.location.href = telegramLink;
-
-      }
-
-    }, 1000);
-  </script>
 
 </body>
 </html>
